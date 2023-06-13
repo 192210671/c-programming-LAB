@@ -1,0 +1,247 @@
+1.pascal triangle
+
+
+#include <stdio.h>
+int main() {
+int rows, k = 1, space, i, j;
+printf("Enter the number of rows: ");                                                                                 
+scanf("%d", &rows);
+for (i = 0; i < rows; i++) {
+for (space = 1; space <= rows - i; space++)
+printf(" ");
+for (j = 0; j <= i; j++) {
+if (j == 0 || i == 0)
+k= 1;
+else
+k = k * (i - j + 1) / j;
+printf("%4d", k);
+}
+printf("\n");
+}
+return 0;
+}
+
+
+
+
+
+
+2.floyd triangle
+#include<stdio.h>
+int main()
+{
+int n,i,j,k=1;
+printf("enter the noof rows...\n");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+for(j=1;j<i;j++)
+{
+printf("%3d",k);
+k++;
+}
+printf("\n");
+}
+return 0;
+}
+
+
+3.pyramid pattern
+#include<stdio.h>
+int main()
+{
+int n,i,j,k;
+printf("enter the no of rows:...\n");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+for(j=1;j<=n-i;j++)
+{
+printf(" ");
+}
+for(k=1;k<=2*i-1;k++)
+{
+printf("*");
+}
+printf("\n");
+}
+
+return 0;
+}
+
+
+3.count of elemnts in string
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+void main()
+{
+char str[100];
+int alp, digit, splch, i;
+alp = digit = splch = i = 0;
+
+
+printf("\n\nCount total number of alphabets, digits and special characters :\n");
+
+printf("Input the string : ");
+fgets(str, sizeof str, stdin);
+while(str[i]!='\0')
+{
+if((str[i]>='a' && str[i]<='z') || (str[i]>='A' && str[i]<='Z'))
+{
+alp++;
+}
+else if(str[i]>='0' && str[i]<='9')
+{
+digit++;
+}
+else
+{
+splch++;
+}
+
+i++;
+}
+
+printf("Number of Alphabets in the string is : %d\n", alp);
+printf("Number of Digits in the string is : %d\n", digit);
+printf("Number of Special characters in the string is : %d\n\n", splch);
+}
+
+
+5.frequency
+#include <stdio.h>
+void main(){
+char str[1000],choice;
+int i,count=0;
+
+printf("\n\nFind the Frequency of Characters :\n");
+printf("Input the string : ");
+fgets(str,sizeof str,stdin);
+
+printf("Input the character to find frequency: ");
+scanf("%c",&choice);
+for(i=0;str[i]!='\0';++i)
+{
+if(choice==str[i])
+++count;
+}
+printf("The frequency of '%c' is : %d\n\n", choice, count);
+}
+
+
+6.no of vowels 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+
+void main()
+{
+char str[100];
+int i, len, vowel, cons;
+
+printf("\n\nCount total number of vowel or consonant :\n");
+
+printf("Input the string : ");
+fgets(str, sizeof str, stdin);
+
+vowel = 0;
+cons = 0;
+len = strlen(str);
+
+for(i=0; i<len; i++)
+{
+
+if(str[i] =='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' || str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U')
+{
+vowel++;
+}
+else if((str[i]>='a' && str[i]<='z') || (str[i]>='A' && str[i]<='Z'))
+{
+cons++;
+}
+}
+printf("\nThe total number of vowel in the string is : %d\n", vowel);
+printf("The total number of consonant in the string is : %d\n\n", cons);
+
+
+
+}
+
+
+7.diamond pattern 
+#include <stdio.h>
+int main()
+{
+int n, c, k;
+
+printf("Enter number of rows\n");
+scanf("%d", &n);
+
+for (k = 1; k <= n; k++)
+{
+for (c = 1; c <= n-k; c++)
+printf(" ");
+
+for (c = 1; c <= 2*k-1; c++)
+printf("*");
+
+printf("\n");
+}
+
+for (k = 1; k <= n - 1; k++)
+{
+for (c = 1; c <= k; c++)
+printf(" ");
+
+for (c = 1 ; c <= 2*(n-k)-1; c++)
+printf("*");
+
+printf("\n");
+}
+
+return 0;
+}
+
+8.remove vowels
+#include<stdio.h>
+ 
+// Max Size of inputString
+const int SIZE = 100;
+ 
+int main()
+{
+ 
+    
+    char inputStr[SIZE];
+    int i, j;
+ 
+  
+    printf("Enter a string : ");
+    gets(inputStr);
+ 
+    printf("String before removing Vowels :%s\n", inputStr);
+ 
+
+    for (i = 0, j = 0; inputStr[i]; ++i)
+    {
+     
+        if (inputStr[i] != 'a' && inputStr[i] != 'e' && inputStr[i] != 'i' && inputStr[i] != 'o' && inputStr[i] != 'u'
+            && inputStr[i] != 'A' && inputStr[i] != 'E' && inputStr[i] != 'I' && inputStr[i] != 'O' && inputStr[i] != 'U')
+        {
+          
+            inputStr[j++] = inputStr[i];
+        }
+ 
+    }
+    
+
+    inputStr[j] = '\0';
+ 
+   
+    printf("String after removing Vowels:%s\n", inputStr);
+ 
+    return 0;
+}
